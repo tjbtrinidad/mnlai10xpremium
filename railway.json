@@ -1,0 +1,29 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "npm ci --only=production"
+  },
+  "deploy": {
+    "numReplicas": 1,
+    "sleepApplication": false,
+    "startCommand": "npm start"
+  },
+  "environments": {
+    "production": {
+      "variables": {
+        "NODE_ENV": "production",
+        "PORT": "${{ PORT }}"
+      }
+    },
+    "staging": {
+      "variables": {
+        "NODE_ENV": "staging",
+        "PORT": "${{ PORT }}"
+      }
+    }
+  },
+  "regions": [
+    "us-west1"
+  ]
+}
