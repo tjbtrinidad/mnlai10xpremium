@@ -177,9 +177,9 @@ ul {
   background-clip: text;
 }
 
-/* Animation Utilities */
+/* Animation Utilities - Show content by default */
 [data-reveal] {
-  opacity: 0;
+  opacity: 1; /* Changed from 0 to 1 - show content immediately */
   transition: opacity 0.8s var(--transition-base), transform 0.8s var(--transition-base);
 }
 
@@ -188,7 +188,7 @@ ul {
 }
 
 [data-reveal="up"] {
-  transform: translateY(30px);
+  transform: translateY(0); /* Changed from 30px to 0 - no initial offset */
 }
 
 [data-reveal="up"].revealed {
@@ -196,7 +196,7 @@ ul {
 }
 
 [data-reveal="left"] {
-  transform: translateX(-30px);
+  transform: translateX(0); /* Changed from -30px to 0 */
 }
 
 [data-reveal="left"].revealed {
@@ -204,7 +204,7 @@ ul {
 }
 
 [data-reveal="right"] {
-  transform: translateX(30px);
+  transform: translateX(0); /* Changed from 30px to 0 */
 }
 
 [data-reveal="right"].revealed {
